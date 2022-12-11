@@ -6,7 +6,7 @@
  */
 
 //implement Shape interface and provide abstract method implementation
-public class Circle{
+public class Circle implements Shape{
 
     /*
     Define an instance variable called as pi and give initial value as 3.14
@@ -14,16 +14,22 @@ public class Circle{
     double pi
      */
 
-
-
+    private static final double pi=3.14;
 
     /*
     Define an instance variable for Circle called as radius
     Instance variable must be encapsulated
     double radius
      */
+    private double radius;
 
+    public double getRadius() {
+        return radius;
+    }
 
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 
     /*
     Override area and perimeter methods here
@@ -34,9 +40,24 @@ public class Circle{
     Perimeter of a circle can be found as => 2 * π * r
     Basically it is => 2 * pi * radius
     */
+    // filled in the blanks with the paremeters.
 
+    @Override
+    public double area() {
+    return pi * radius * radius;
+}
 
+    @Override
+    public double perimeter() {
+        return 2 * pi * radius;
+    }
 
     //Override toString() method here
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
 }
